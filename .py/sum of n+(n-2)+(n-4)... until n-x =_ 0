@@ -1,0 +1,7 @@
+def sum_of_pattern(n,x):
+  if n-x <= 0:
+    return 0
+  else:
+    return (n-x)+sum_of_pattern(n,x+2)
+n=int(input())
+print(sum_of_pattern(n,0))
