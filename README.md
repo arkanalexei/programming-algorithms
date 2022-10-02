@@ -1,7 +1,7 @@
 
-# Python Alogorithms
+# Programming Algorithms
 
-A all in one place for most od the python Alogorithms
+An all in one place for any Programming Algorithms
 
 ## License
 
