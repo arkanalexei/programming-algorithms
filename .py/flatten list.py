@@ -1,5 +1,10 @@
+new_list=[]
 def flatten_list(l):
-  l=[x for i in l for x in i]
-  return l
- a=[int i for i.split]
-print(flatten_list([[1],[12,13],[12,5,6]]))
+    global new_list
+    for i in range(len(l)):
+        if type(l[i])==list:
+            flatten_list(l[i])
+        else:
+            new_list.append(l[i])
+    return new_list
+print(flatten_list([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]))
