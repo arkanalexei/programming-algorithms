@@ -1,4 +1,4 @@
-//selection sort
+//quick sort
 #include <stdio.h>
 
 void swap(int *xp, int *yp){
