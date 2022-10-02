@@ -1,0 +1,94 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.PriorityQueue;
+
+public class map {
+    public static class Edge {
+        int src;
+        int des;
+        int wgt;
+
+        Edge(int src, int des, int wgt) {
+            this.src = src;
+            this.des = des;
+            this.wgt = wgt;
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int vtx = Integer.parseInt(br.readLine());
+        int edg = Integer.parseInt(br.readLine());
+        ArrayList<Edge>[] graph = new ArrayList[vtx];
+        for (int i = 0; i < vtx; i++) {
+            graph[i] = new ArrayList<>();
+        }
+        for (int i = 0; i < edg; i++) {
+            String parts[] = br.readLine().split("\\s");
+            int src = Integer.parseInt(parts[0]);
+            int des = Integer.parseInt(parts[1]);
+            int wgt = Integer.parseInt(parts[2]);
+            graph[src].add(new Edge(src, des, wgt));
+            graph[des].add(new Edge(des, src, wgt));
+        }
+        int src = Integer.parseInt(br.readLine());
+        dijkstra(graph, src, 14);
+    }
+
+    public static class Pair implements Comparable<Pair> {
+        int vtx, wgt;
+        String psf;
+
+        Pair(int vtx, String psf, int wgt) {
+            this.vtx = vtx;
+            this.psf = psf;
+            this.wgt = wgt;
+            
+        }
+
+        public int compareTo(Pair o) {
+            return this.wgt - o.wgt;
+        }
+    }
+
+    public static void dijkstra(ArrayList<Edge>[] graph, int src) {
+        PriorityQueue<Pair> pq = new PriorityQueue<>();
+        boolean visited[] = new boolean[graph.length];
+        pq.add(new Pair(src, "" + src, 0));
+        while (pq.size() != 0) {
+            Pair temp = pq.remove();
+            if (visited[temp.vtx] == false) {
+                visited[temp.vtx] = true;
+                System.out.println(temp.vtx + " via " + temp.psf + " @ " + temp.wgt);
+
+                for (Edge e : graph[temp.vtx]) {
+                    if (visited[e.des] == false) {
+                        pq.add(new Pair(e.des, temp.psf + e.des, temp.wgt + e.wgt));
+                    }
+                }
+            }
+        }
+    }
+    public static void dijkstra(ArrayList<Edge>[] graph, int src, int des) {
+        PriorityQueue<Pair> pq = new PriorityQueue<>();
+        boolean visited[] = new boolean[graph.length];
+        pq.add(new Pair(src, src+",", 0));
+        while (pq.size() != 0) {
+            Pair temp = pq.remove();
+            if (visited[temp.vtx] == false) {
+                visited[temp.vtx] = true;
+                if(temp.vtx == des){
+                    System.out.println(temp.vtx + " via " + temp.psf + " @ " + temp.wgt);
+                    return;
+                }
+
+                for (Edge e : graph[temp.vtx]) {
+                    if (visited[e.des] == false) {
+                        pq.add(new Pair(e.des, temp.psf + e.des +",", temp.wgt + e.wgt));
+                    }
+                }
+            }
+        }
+    }
+}
