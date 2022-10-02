@@ -1,7 +1,7 @@
 
 # Programming Algorithms
 
-An all in one place for any Programming Algorithms
+An all-in-one place for any Programming Algorithms
 
 ## License
 
