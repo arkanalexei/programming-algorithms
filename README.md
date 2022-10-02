@@ -31,6 +31,8 @@ SOFTWARE.
 ## Authors
 
 - [@unknownprogrammer12](https://www.github.com/unknownprogrammer12)
+- [@arkanalexei](https://www.github.com/arkanalexei)
+
 
 
 ![Logo](https://hacktoberfestswaglist.com/img/Hfest-Logo-2-Color-Manga.png)
