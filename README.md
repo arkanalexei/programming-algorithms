@@ -48,7 +48,6 @@ flowchart LR
 ## Awesome contributors :star_struck:
 
 ## Main contributors
-- [@unknownprogrammer12](https://www.github.com/unknownprogrammer12)
 - [@arkanalexei](https://www.github.com/arkanalexei)
 
 ## Awesome contributors :star_struck:
