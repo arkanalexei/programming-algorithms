@@ -50,6 +50,9 @@ flowchart LR
 ## Main contributors
 - [@arkanalexei](https://www.github.com/arkanalexei)
 
+## Author
+- [@Arkagrawal](https://www.github.com/codewithark)
+
 ## Awesome contributors :star_struck:
 <a href="https://github.com/arkanalexei/programming-algorithms/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=arkanalexei/programming-algorithms" />
