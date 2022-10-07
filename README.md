@@ -45,8 +45,6 @@ flowchart LR
 
 ### Star The Repository :star2:
 
-## Awesome contributors :star_struck:
-
 ## Main contributors
 - [@arkanalexei](https://www.github.com/arkanalexei)
 
